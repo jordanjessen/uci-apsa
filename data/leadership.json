@@ -1,0 +1,99 @@
+{
+  "_readme": [
+    "==================================================================",
+    "  LEADERSHIP — this file controls the Leadership page.",
+    "  You do not need to touch any HTML.",
+    "==================================================================",
+    "",
+    "TO ADD A BOARD MEMBER: copy one whole block between { and }, paste",
+    "it inside the square brackets below, and edit the values. Put a",
+    "comma after every block EXCEPT the last one. A stray comma after",
+    "the final block is the most common cause of a blank page.",
+    "",
+    "ORDER MATTERS: members appear on the page in the order they are",
+    "listed here. To move someone up the page, move their block up.",
+    "",
+    "AT HANDOVER: replace boardYear with the new academic year, then",
+    "replace each name, program, year, bio and photo. Keep the roles.",
+    "",
+    "FIELD BY FIELD:",
+    "  name     Full name as they wish it published.",
+    "  role     Office held, e.g. 'President'. Shown above the name.",
+    "  program  e.g. 'M.D.' or 'M.D./Ph.D.'",
+    "  year     e.g. 'MS2'",
+    "  bio      Two or three sentences. Plain text only, no HTML.",
+    "  photo    Path to a picture, e.g. 'assets/img/board/jane-doe.jpg'.",
+    "           LEAVE IT AS \"\" IF THERE IS NO PHOTO — the site will show",
+    "           the person's initials in a circle instead. It will never",
+    "           show a broken image.",
+    "  email    Optional. Leave as \"\" to publish no address. Addresses",
+    "           on a public page do get collected by spam senders, so",
+    "           the default is to leave these empty and route enquiries",
+    "           through the chapter address on the Contact page.",
+    "  vacant   Add \"vacant\": true to advertise an unfilled post. When",
+    "           set, name and photo are ignored.",
+    "",
+    "PHOTO TIPS: square pictures work best (the site crops to a circle).",
+    "Around 400x400 pixels is plenty. Save as .jpg, keep it under about",
+    "300 KB, and use a lower-case filename with hyphens and no spaces.",
+    "Please ask each person before publishing their photograph."
+  ],
+
+  "boardYear": "2026–2027",
+
+  "board": [
+    {
+      "name": "Jordan Jessen",
+      "role": "President",
+      "program": "M.D.",
+      "year": "MS2",
+      "bio": "TODO — add two or three sentences: research area, why the physician-scientist path, what you want the chapter to achieve this year.",
+      "photo": "",
+      "email": ""
+    },
+    {
+      "name": "Sam Kho",
+      "role": "Vice President",
+      "program": "M.D.",
+      "year": "MS2",
+      "bio": "TODO — add two or three sentences.",
+      "photo": "",
+      "email": ""
+    },
+    {
+      "name": "Samuel Du",
+      "role": "Treasurer",
+      "program": "M.D./Ph.D.",
+      "year": "MS4",
+      "bio": "TODO — add two or three sentences.",
+      "photo": "",
+      "email": ""
+    },
+    {
+      "name": "Xi Yu",
+      "role": "School of Medicine Liaison",
+      "program": "M.D.",
+      "year": "MS2",
+      "bio": "TODO — add two or three sentences.",
+      "photo": "",
+      "email": ""
+    },
+    {
+      "role": "Secretary",
+      "vacant": true,
+      "bio": "The Secretary keeps the minutes of chapter meetings and oversees the committees that plan individual events. Any active member in good standing may be nominated.",
+      "photo": "",
+      "email": ""
+    }
+  ],
+
+  "advisor": {
+    "name": "TODO — faculty advisor's name",
+    "role": "Faculty Advisor",
+    "program": "TODO — department or title",
+    "year": "",
+    "bio": "TODO — a short note on the advisor's research and their role with the chapter. Under Article IV the advisor is a full-time UC Irvine faculty member and an established physician-scientist experienced in mentoring trainees.",
+    "photo": "",
+    "email": ""
+  }
+}

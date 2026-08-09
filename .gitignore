@@ -1,0 +1,11 @@
+# macOS folder metadata
+.DS_Store
+
+# Editor scratch files
+*.swp
+*~
+.vscode/
+.idea/
+
+# Microsoft Word lock files, in case chapter documents are ever added
+~$*

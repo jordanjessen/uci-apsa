@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leadership | UC Irvine APSA Local Chapter</title>
+<meta name="description" content="The executive committee and faculty advisor of the UC Irvine APSA local chapter.">
+<!-- Tells the stylesheet that JavaScript is available, so the mobile menu
+     can collapse. Without this the navigation simply stays visible. -->
+<script>document.documentElement.className += " js";</script>
+<link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/source-serif-4-600-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/styles.css">
+<script defer src="assets/js/main.js"></script>
+<script type="module" src="assets/js/leadership.js"></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ============================ HEADER ============================
+     This block is repeated at the top of every page. If you change it
+     here, change it in all the other .html files too.
+     ================================================================ -->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="index.html">
+      <img class="brand__mark" src="assets/img/logo.svg" alt="" width="36" height="36">
+      <span class="brand__text">
+        <span class="brand__name">UCI APSA</span>
+        <span class="brand__sub">Local Chapter</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <svg class="icon nav-toggle__icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon nav-toggle__icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      Menu
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul class="site-nav__list">
+        <li><a class="site-nav__link" href="index.html">Home</a></li>
+        <li><a class="site-nav__link" href="about.html">About</a></li>
+        <li><a class="site-nav__link" href="events.html">Events</a></li>
+        <li><a class="site-nav__link" href="leadership.html" aria-current="page">Leadership</a></li>
+        <li><a class="site-nav__link" href="get-involved.html">Get Involved</a></li>
+        <li><a class="site-nav__link" href="resources.html">Resources</a></li>
+        <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow">Leadership</p>
+      <h1>The <span data-board-year>current</span> executive committee</h1>
+      <p class="lede">Officers serve one-year terms and are elected each spring by the active membership.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid" data-board>
+        <p class="is-loading">Loading the board&hellip;</p>
+        <noscript>
+          <div class="notice" role="note">
+            <svg class="icon notice__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>
+            <div>
+              <p>
+                <strong>JavaScript is switched off in your browser.</strong>
+                The board listing is loaded from a data file and needs JavaScript
+                to display. Every other part of this site works without it &mdash;
+                or <a href="contact.html">get in touch</a> and we will tell you who
+                currently holds each office.
+              </p>
+            </div>
+          </div>
+        </noscript>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section__head">
+        <p class="eyebrow">Faculty advisor</p>
+        <h2>Continuity across handovers</h2>
+        <p class="lede">
+          Under Article IV the chapter's advisor is a full-time UC Irvine faculty
+          member and an established physician-scientist with real experience
+          mentoring trainees.
+        </p>
+      </div>
+      <div class="grid" data-advisor></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="prose">
+        <h2>Standing for office</h2>
+        <p>
+          Elections are held each spring. Any active member in good standing may be
+          nominated for any office, including by themselves &mdash; you do not need to
+          have held a position before, and you do not need anyone's permission to put
+          your name forward.
+        </p>
+        <p>
+          Candidates submit a short statement of interest describing their
+          qualifications and what they want to do with the office. Voting is by
+          anonymous ballot, and where three or more candidates stand for one office it
+          is by ranked choice, so nobody has to vote strategically.
+        </p>
+        <p>
+          <a class="arrow-link" href="get-involved.html">How to get involved <svg class="icon icon--sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CALL TO ACTION ============================ -->
+  <section class="section on-dark cta-band">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <p class="eyebrow">Get involved</p>
+        <h2>Every board started as a member.</h2>
+        <p class="lede">Join this year, find the committee that fits, and stand in the spring.</p>
+      </div>
+      <div class="cta-band__actions">
+        <a class="btn btn--primary btn--lg" href="get-involved.html">Join the chapter <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--outline btn--lg" href="contact.html">Ask us a question</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================ FOOTER ============================
+     Repeated on every page. If you change it here, change it everywhere.
+     ================================================================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div>
+        <p class="site-footer__brand">UC Irvine APSA Local Chapter</p>
+        <p class="site-footer__blurb">
+          The University of California, Irvine local chapter of the American
+          Physician Scientists Association. Student-run, open to every UCI medical
+          student on a path that includes research.
+        </p>
+      </div>
+
+      <nav aria-label="Footer">
+        <p class="site-footer__heading">Explore</p>
+        <ul class="site-footer__list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <p class="site-footer__heading">Connect</p>
+        <ul class="site-footer__list">
+          <!-- TODO: replace with the real chapter email address. It also
+               appears on contact.html and in every other page footer. -->
+          <li><a href="mailto:TODO-EMAIL@uci.edu">TODO-EMAIL@uci.edu</a></li>
+          <li><a href="https://www.physicianscientists.org/">National APSA</a></li>
+          <li><a href="get-involved.html">Join the chapter</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="site-footer__legal">
+      <p>
+        The University of California, Irvine APSA Chapter openly admits students to
+        its membership and does not discriminate on the basis of race, color, creed,
+        sex, sexual orientation, marital status, personal appearance, age, national
+        origin, political affiliation, physical or mental disability, or on the basis
+        of rights secured by the First Amendment of the United States Constitution.
+      </p>
+      <p>
+        This chapter is a registered student organization. It does not speak for, and
+        is not endorsed by, the University of California, Irvine, the Associated
+        Medical Student Government, or the national American Physician Scientists
+        Association.
+      </p>
+      <p>&copy; <span data-current-year>2026</span> UC Irvine APSA Local Chapter.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

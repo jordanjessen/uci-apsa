@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="UC Irvine APSA Local Chapter">
+  <!-- Navy disc so the mark works on light and dark backgrounds alike. -->
+  <circle cx="24" cy="24" r="24" fill="#0B2545"/>
+  <!-- Gold ring -->
+  <circle cx="24" cy="24" r="21" fill="none" stroke="#FFD200" stroke-width="2"/>
+  <!-- Abstract molecule: three bonded nodes, for the research half of the
+       physician-scientist. Drawn with plain shapes so it stays crisp at
+       small sizes. -->
+  <path d="M24 15 L15 31 M24 15 L33 31 M15 31 L33 31"
+        fill="none" stroke="#FFFFFF" stroke-width="2.25" stroke-linecap="round"/>
+  <circle cx="24" cy="15" r="4.25" fill="#FFD200"/>
+  <circle cx="15" cy="31" r="4.25" fill="#FFFFFF"/>
+  <circle cx="33" cy="31" r="4.25" fill="#FFFFFF"/>
+</svg>
