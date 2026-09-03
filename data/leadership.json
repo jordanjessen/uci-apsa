@@ -61,11 +61,9 @@
       "email": ""
     },
     {
-      "name": "Samuel Du",
       "role": "Treasurer",
-      "program": "M.D./Ph.D.",
-      "year": "MS4",
-      "bio": "TODO — add two or three sentences.",
+      "vacant": true,
+      "bio": "The Treasurer records and maintains the chapter's records of expenditures, including submitting the forms needed to request funds, and attends Associated Medical Student Government meetings related to student group funding. Any active member in good standing may be nominated.",
       "photo": "",
       "email": ""
     },
@@ -88,11 +86,11 @@
   ],
 
   "advisor": {
-    "name": "TODO — faculty advisor's name",
+    "name": "Edwin S. Monuki, M.D., Ph.D.",
     "role": "Faculty Advisor",
-    "program": "TODO — department or title",
+    "program": "Warren L. Bostick Professor and Chair, Department of Pathology",
     "year": "",
-    "bio": "TODO — a short note on the advisor's research and their role with the chapter. Under Article IV the advisor is a full-time UC Irvine faculty member and an established physician-scientist experienced in mentoring trainees.",
+    "bio": "Dr. Monuki is Chair of Pathology at the UC Irvine School of Medicine and Associate Director of the Medical Scientist Training Program, with a joint appointment in Developmental & Cell Biology. His laboratory studies the human choroid plexus \u2014 the tissue that produces cerebrospinal fluid and forms the blood-CSF barrier \u2014 using stem cell models to explore its potential for regenerative medicine, alongside work on forebrain development and neuropathology. He earned his M.D. and Ph.D. in Neurosciences at UC San Diego and brings long experience mentoring physician-scientist trainees to the chapter.",
     "photo": "",
     "email": ""
   }
