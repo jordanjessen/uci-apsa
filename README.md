@@ -58,9 +58,6 @@ Work through these before announcing the site:
 
 - [ ] **Chapter email address.** Replace `TODO-EMAIL@uci.edu` everywhere. See
       [How to change the chapter email address](#how-to-change-the-chapter-email-address).
-- [ ] **Membership form link.** Replace the placeholder Google Form address in
-      `get-involved.html`. See
-      [How to change the membership form link](#how-to-change-the-membership-form-link).
 - [ ] **Real events.** `data/events.json` ships with two clearly-marked example
       events. Replace them with real ones and delete the examples.
 - [ ] **Board bios.** Every board member in `data/leadership.json` has a
@@ -209,10 +206,11 @@ The Google Form address appears in **exactly one place** on the whole site. Ever
 only ever have to change it once.
 
 1. Open `get-involved.html`.
-2. Search for `TODO-REPLACE-WITH-YOUR-GOOGLE-FORM-ID`. It is inside a clearly
-   marked comment block.
-3. Replace the whole web address with your form's share link.
-4. While you are there, delete the yellow TODO notice a few lines below.
+2. Search for `forms.gle`. It is the `href` on the "Open the membership form"
+   button, just below a comment block explaining that this is the only copy.
+3. Replace the whole web address with the new form's share link.
+
+The link currently points at <https://forms.gle/CcRBKxNCcAmbrR5C8>.
 
 ---
 
