@@ -7,8 +7,10 @@
   member — those live in the data folder and sit on pages already listed
   here.
 
-  If you do add a page, copy one <url> block, change the <loc> to the new
-  address, and set <lastmod> to today's date in YYYY-MM-DD form.
+  If you do add a page, copy one whole block from "url" to "/url", change
+  the address to the new page, and set the date to today in YYYY-MM-DD
+  form. (XML tags cannot be written inside a comment like this one, which
+  is why they are named rather than shown here.)
 
   404.html is deliberately absent: it is the "page not found" screen and
   should never appear in search results.
