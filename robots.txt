@@ -1,0 +1,28 @@
+# robots.txt — UC Irvine APSA Local Chapter
+#
+# This file tells search engine crawlers what they may look at. Everything
+# on this site is public, so everything is allowed.
+#
+# ---------------------------------------------------------------------
+# READ THIS BEFORE RELYING ON THIS FILE
+#
+# Search engines only read robots.txt from the ROOT of a domain. For this
+# site that means:
+#
+#     https://jordanjessen.github.io/robots.txt        <- what they read
+#     https://jordanjessen.github.io/uci-apsa/robots.txt   <- this file
+#
+# Because the site is published in a subfolder, THIS FILE IS NOT READ by
+# crawlers today. It is kept here so that it starts working the moment the
+# chapter moves to its own domain (e.g. uciapsa.org), where this file would
+# land at the root.
+#
+# Until then, tell search engines about the sitemap directly instead, by
+# submitting the address below in Bing Webmaster Tools and Google Search
+# Console. Bing is the one that matters for DuckDuckGo.
+# ---------------------------------------------------------------------
+
+User-agent: *
+Allow: /
+
+Sitemap: https://jordanjessen.github.io/uci-apsa/sitemap.xml

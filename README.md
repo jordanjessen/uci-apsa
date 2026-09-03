@@ -360,6 +360,11 @@ uci-apsa-site/
 ├── contact.html          Contact details and who handles what
 ├── 404.html              Shown when someone follows a broken link
 ├── .nojekyll             Tells GitHub Pages to publish files as-is. Keep it.
+├── sitemap.xml           List of pages, for search engines. Edit only if
+│                         you add or remove a whole page.
+├── robots.txt            Tells crawlers everything is allowed. See the
+│                         note inside it — it only takes effect on a
+│                         custom domain, not in a GitHub subfolder.
 ├── README.md             This guide
 ├── CONTRIBUTING.md       Step-by-step editing instructions
 │
