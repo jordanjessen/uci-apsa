@@ -128,14 +128,29 @@ export function endMoment(start, end) {
    People
    ------------------------------------------------------------------------- */
 
+/* Degrees and suffixes are not part of a person's initials. Without this,
+   "Edwin S. Monuki, M.D., Ph.D." would come out as "EP" rather than "EM". */
+const CREDENTIAL = /^(?:m\.?d|ph\.?d|d\.?o|d\.?d\.?s|d\.?v\.?m|m\.?s|m\.?a|m\.?p\.?h|m\.?b\.?a|b\.?a|b\.?s|r\.?n|n\.?p|p\.?a|pharm\.?d|j\.?d|esq|jr|sr|ii|iii|iv)\.?$/i;
+
+/** First letter of a word, ignoring any punctuation around it. */
+function firstLetter(word) {
+  const m = word.match(/[A-Za-z]/);
+  return m ? m[0] : "";
+}
+
 /** "Jordan Jessen" -> "JJ". Used when a board member has no photo yet. */
 export function initials(name) {
   if (!name) return "?";
-  const parts = String(name).trim().split(/\s+/).filter(Boolean);
-  if (!parts.length) return "?";
-  const first = parts[0][0] || "";
-  const last = parts.length > 1 ? parts[parts.length - 1][0] || "" : "";
-  return (first + last).toUpperCase();
+  const words = String(name).trim().split(/\s+/)
+    .map((w) => w.replace(/,+$/, ""))
+    .filter(Boolean);
+  if (!words.length) return "?";
+  // Drop degrees, but never end up with nothing to show.
+  const named = words.filter((w) => !CREDENTIAL.test(w));
+  const parts = named.length ? named : words;
+  const first = firstLetter(parts[0]);
+  const last = parts.length > 1 ? firstLetter(parts[parts.length - 1]) : "";
+  return (first + last).toUpperCase() || "?";
 }
 
 /* -------------------------------------------------------------------------
