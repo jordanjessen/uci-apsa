@@ -24,9 +24,9 @@
      15. Print
 
    THE ONE COLOR RULE YOU MUST NOT BREAK
-     UC Irvine Gold (#FFD200) on a white background is a 1.45:1 contrast
+     UC Irvine Gold (#FECC07) on a white background is a 1.52:1 contrast
      ratio. That is unreadable and fails accessibility requirements. Gold is
-     only ever used on navy, or as a non-text accent (bars, rules, icons).
+     only ever used on UCI blue, or as a non-text accent (bars, rules, icons).
      If you need gold-colored TEXT on a light background, use --gold-ink.
    ========================================================================= */
 
@@ -37,14 +37,21 @@
    ========================================================================= */
 
 :root {
-  /* --- Brand colors ------------------------------------------------- */
-  --navy-900: #071a33;   /* Footer, call-to-action band                   */
-  --navy-800: #0b2545;   /* Header, hero                                  */
-  --navy-700: #123a63;   /* Raised surfaces on dark                       */
-  --blue-600: #0064a4;   /* UC Irvine Blue. Links + primary buttons       */
+  /* --- Brand colors ---------------------------------------------------
+     The three --brand-* tokens are the dark surfaces of the site. They are
+     named by ROLE, not by a number, because --brand-card is DARKER than
+     --brand-base rather than lighter — see the note on it below.         */
+  --brand-base: #255799;  /* UCI Blue. Header, hero, page head, CTA band   */
+  --brand-deep: #16345c;  /* Footer; also the dark label on gold buttons   */
+  /* Cards sitting on --brand-base. This steps DOWN in lightness, not up.
+     --brand-base is light enough that anything lighter drops gold links
+     below the 4.5:1 minimum, so raised surfaces are drawn as recessed
+     ones. Do not lighten this value without re-checking contrast.        */
+  --brand-card: #204d86;
+  --blue-600: #0064a4;   /* Link + primary-button blue on LIGHT surfaces  */
   --blue-700: #004e80;   /* Hover / pressed                               */
   --blue-50:  #eaf3f9;   /* Tinted panels                                 */
-  --gold-500: #ffd200;   /* UC Irvine Gold. Accents only — see rule above */
+  --gold-500: #fecc07;   /* UC Irvine Gold. Accents only — see rule above */
   --gold-ink: #7a5a00;   /* Gold-ish TEXT on light backgrounds            */
 
   /* --- Neutrals ------------------------------------------------------ */
@@ -103,9 +110,9 @@
   --radius:    10px;
   --radius-lg: 16px;
   --radius-pill: 999px;
-  --shadow-sm: 0 1px 2px rgba(7, 26, 51, 0.06);
-  --shadow-md: 0 4px 16px rgba(7, 26, 51, 0.08);
-  --shadow-lg: 0 12px 32px rgba(7, 26, 51, 0.12);
+  --shadow-sm: 0 1px 2px rgba(22, 52, 92, 0.06);
+  --shadow-md: 0 4px 16px rgba(22, 52, 92, 0.08);
+  --shadow-lg: 0 12px 32px rgba(22, 52, 92, 0.12);
 
   /* --- Motion ---------------------------------------------------------- */
   --ease: cubic-bezier(0.2, 0, 0.2, 1);
@@ -115,15 +122,15 @@
 /* Dark context. Any section with this class re-points the semantic tokens,
    so cards, links and text inside it flip automatically.                  */
 .on-dark {
-  --bg:          var(--navy-800);
+  --bg:          var(--brand-base);
   --fg:          var(--white);
-  --fg-muted:    #c3d0e0;               /*  9.8:1 on navy — passes AA      */
+  --fg-muted:    #c3d0e0;               /* 4.6:1 on UCI blue — passes AA   */
   --rule:        rgba(255, 255, 255, 0.16);
-  --link:        var(--gold-500);       /* 10.6:1 on navy — passes AA      */
-  --link-hover:  #ffe469;
+  --link:        var(--gold-500);       /* 4.8:1 on UCI blue — passes AA   */
+  --link-hover:  #fede5c;               /* 5.5:1 on UCI blue — passes AA   */
   --accent:      var(--gold-500);
   --focus-ring:  var(--gold-500);
-  --card-bg:     var(--navy-700);
+  --card-bg:     var(--brand-card);
   --card-border: rgba(255, 255, 255, 0.18);
 
   background-color: var(--bg);
@@ -258,13 +265,13 @@ li { margin-bottom: var(--sp-2); }
   z-index: 100;
   padding: var(--sp-3) var(--sp-5);
   background: var(--gold-500);
-  color: var(--navy-900);
+  color: var(--brand-deep);
   font-weight: 600;
   text-decoration: none;
   border-radius: 0 0 var(--radius) var(--radius);
   transition: transform var(--speed) var(--ease);
 }
-.skip-link:focus { transform: translate(-50%, 0); color: var(--navy-900); }
+.skip-link:focus { transform: translate(-50%, 0); color: var(--brand-deep); }
 
 /* A single, consistent focus ring across the whole site. */
 :focus-visible {
@@ -315,7 +322,12 @@ a.btn, button, .site-nav__link, .nav-toggle { min-height: 44px; }
   color: var(--accent);
   margin: 0 0 var(--sp-3);
 }
-.on-dark .eyebrow { color: var(--gold-500); }
+/* Dark surfaces take the gold eyebrow. .hero and .page-header are listed
+   explicitly because they set their own dark background instead of using
+   the .on-dark class, and would otherwise fall back to the light-surface
+   --accent, which is a blue on a blue.                                    */
+.on-dark .eyebrow,
+.hero .eyebrow { color: var(--gold-500); }
 
 .lede {
   font-size: var(--step-1);
@@ -346,12 +358,12 @@ a.btn, button, .site-nav__link, .nav-toggle { min-height: 44px; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background-color: var(--navy-800);
+  background-color: var(--brand-base);
   color: var(--white);
   transition: box-shadow var(--speed) var(--ease);
 }
 /* main.js adds this class once the page is scrolled. */
-.site-header.is-stuck { box-shadow: 0 2px 18px rgba(7, 26, 51, 0.35); }
+.site-header.is-stuck { box-shadow: 0 2px 18px rgba(22, 52, 92, 0.35); }
 
 .site-header__inner {
   display: flex;
@@ -372,7 +384,9 @@ a.btn, button, .site-nav__link, .nav-toggle { min-height: 44px; }
   line-height: 1.15;
 }
 .brand:hover { color: var(--white); }
-.brand__mark { width: 36px; height: 36px; flex: none; }
+/* The APSA wordmark is close to 3:1, so it is sized by HEIGHT and left to
+   find its own width. Do not give this a fixed square size.              */
+.brand__mark { width: auto; height: 26px; flex: none; }
 .brand__text { display: flex; flex-direction: column; }
 .brand__name { font-size: var(--step-0); letter-spacing: 0.01em; }
 .brand__sub {
@@ -447,9 +461,9 @@ a.btn, button, .site-nav__link, .nav-toggle { min-height: 44px; }
     position: absolute;
     left: 0; right: 0;
     top: 100%;
-    background: var(--navy-800);
+    background: var(--brand-base);
     border-top: 1px solid rgba(255, 255, 255, 0.14);
-    box-shadow: 0 12px 24px rgba(7, 26, 51, 0.35);
+    box-shadow: 0 12px 24px rgba(22, 52, 92, 0.35);
     padding: var(--sp-3) var(--gutter) var(--sp-5);
     display: none;
   }
@@ -471,13 +485,16 @@ a.btn, button, .site-nav__link, .nav-toggle { min-height: 44px; }
    ========================================================================= */
 
 .hero {
-  background-color: var(--navy-800);
+  background-color: var(--brand-base);
   color: var(--white);
   padding-block: clamp(3.5rem, 9vw, 7.5rem);
-  /* A very soft navy gradient so the large flat area is not dead-looking. */
+  /* A very soft gradient so the large flat area is not dead-looking. Both
+     layers DARKEN the blue underneath; neither lightens it. That is
+     deliberate — every contrast ratio on the hero is checked against flat
+     --brand-base, so a layer that only darkens can never invalidate it.  */
   background-image:
-    radial-gradient(80rem 40rem at 15% -10%, rgba(18, 58, 99, 0.85), transparent 60%),
-    radial-gradient(60rem 30rem at 100% 0%,  rgba(0, 100, 164, 0.35), transparent 55%);
+    radial-gradient(80rem 40rem at 15% -10%, rgba(22, 52, 92, 0.85), transparent 60%),
+    radial-gradient(60rem 30rem at 100% 0%,  rgba(13, 40, 74, 0.45), transparent 55%);
 }
 
 .hero__inner { max-width: 46rem; }
@@ -516,7 +533,7 @@ a.btn, button, .site-nav__link, .nav-toggle { min-height: 44px; }
 
 /* Compact hero used on interior pages. */
 .page-header {
-  background-color: var(--navy-800);
+  background-color: var(--brand-base);
   color: var(--white);
   padding-block: clamp(2.5rem, 6vw, 4.5rem);
 }
@@ -565,14 +582,14 @@ a.btn, button, .site-nav__link, .nav-toggle { min-height: 44px; }
 .page-header .btn--primary,
 .site-footer .btn--primary {
   background-color: var(--gold-500);
-  color: var(--navy-900);
+  color: var(--brand-deep);
 }
 .on-dark .btn--primary:hover,
 .hero .btn--primary:hover,
 .page-header .btn--primary:hover,
 .site-footer .btn--primary:hover {
-  background-color: #ffe469;
-  color: var(--navy-900);
+  background-color: #fede5c;
+  color: var(--brand-deep);
 }
 
 /* Secondary / outline. */
@@ -658,7 +675,7 @@ a.btn, button, .site-nav__link, .nav-toggle { min-height: 44px; }
   color: var(--blue-600);
 }
 .card__icon .icon { width: 1.5rem; height: 1.5rem; }
-.on-dark .card__icon { background-color: rgba(255, 210, 0, 0.14); color: var(--gold-500); }
+.on-dark .card__icon { background-color: rgba(254, 204, 7, 0.14); color: var(--gold-500); }
 
 /* --- Event card ------------------------------------------------------- */
 .event-card {
@@ -741,7 +758,7 @@ a.btn, button, .site-nav__link, .nav-toggle { min-height: 44px; }
   white-space: nowrap;
 }
 /* Gold background with near-black navy text: 11.5:1. */
-.badge--planned   { background-color: var(--gold-500); color: var(--navy-900); }
+.badge--planned   { background-color: var(--gold-500); color: var(--brand-deep); }
 .badge--confirmed { background-color: var(--blue-600); color: var(--white); }
 .badge--committee { background-color: var(--surface); color: var(--text-muted); border: 1px solid var(--border); }
 .badge--vacant    { background-color: var(--blue-50); color: var(--blue-700); }
@@ -825,7 +842,7 @@ a.btn, button, .site-nav__link, .nav-toggle { min-height: 44px; }
 .notice__icon { color: var(--blue-600); flex: none; margin-top: 0.15em; }
 .notice p:last-child { margin-bottom: 0; }
 .notice code {
-  background: rgba(7, 26, 51, 0.08);
+  background: rgba(22, 52, 92, 0.08);
   padding: 0.1em 0.4em;
   border-radius: 4px;
   font-size: 0.9em;
@@ -947,7 +964,7 @@ a.btn, button, .site-nav__link, .nav-toggle { min-height: 44px; }
    ========================================================================= */
 
 .site-footer {
-  background-color: var(--navy-900);
+  background-color: var(--brand-deep);
   color: #c3d0e0;
   padding-block: var(--sp-8) var(--sp-6);
   font-size: var(--step--1);

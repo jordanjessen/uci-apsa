@@ -75,9 +75,11 @@ Work through these before announcing the site:
 - [ ] **Check the officer years.** `data/leadership.json` lists each officer's
       year (MS2, MS4 and so on) as recorded on the chapter officer form. Confirm
       these are still correct for the current academic year.
-- [ ] **Decide about the constitution.** If you want the chapter constitution
-      published, add the PDF and link it from the About page. It is not linked
-      at the moment.
+- [ ] **Keep the constitution in step.** The constitution is published in full at
+      `constitution.html` and linked from the About page, with the Word original
+      downloadable from `assets/docs/uci-apsa-chapter-constitution.docx`. If the
+      membership amends it, amend the Word document first, replace the file in
+      `assets/docs/`, then update `constitution.html` to match it word for word.
 
 > **A note on privacy.** Please do not publish anyone's home address or personal
 > phone number on this site. Individual officer email addresses are also left
@@ -374,7 +376,8 @@ uci-apsa-site/
     │   └── leadership.js         Puts the board on the page
     ├── fonts/                Self-hosted fonts and their licenses
     └── img/
-        ├── logo.svg             The chapter mark
+        ├── logo.svg             APSA wordmark, gold, for the site header
+        ├── favicon.svg          The same wordmark on a blue browser-tab tile
         └── board/               Board member photos go here
 ```
 
@@ -403,11 +406,18 @@ staying online, and no visitor data is sent to a third party.
 under `01. DESIGN TOKENS`. Change a value there and it updates across the whole
 site.
 
-> **The one rule you must not break:** UC Irvine Gold (`#FFD200`) on a white
-> background is a contrast ratio of 1.45:1. That is unreadable, and it fails
-> accessibility requirements. Gold is used only on navy, or as a non-text accent
-> such as a rule or an icon. If you ever need gold-*colored text* on a light
-> background, use the darker `--gold-ink` instead, which passes at 6.4:1.
+> **The one rule you must not break:** UC Irvine Gold (`#FECC07`) on a white
+> background is a contrast ratio of 1.52:1. That is unreadable, and it fails
+> accessibility requirements. Gold is used only on UCI blue, or as a non-text
+> accent such as a rule or an icon. If you ever need gold-*colored text* on a
+> light background, use the darker `--gold-ink` instead, which passes at 6.4:1.
+
+The three dark surfaces are `--brand-base` (`#255799`, the UCI blue used for
+the header, hero and page headers), `--brand-deep` (`#16345c`, footer and
+call-to-action bands) and `--brand-card` (`#204d86`, cards sitting on a dark
+section). Note that `--brand-card` is *darker* than `--brand-base`, not
+lighter: `#255799` is light enough that any lighter card surface pushes gold
+links below the 4.5:1 minimum, so raised panels are drawn as recessed ones.
 
 **Type.** Headings are Source Serif 4; body text and interface are Inter. Both
 are open-licensed variable fonts, so a single file covers a whole range of
